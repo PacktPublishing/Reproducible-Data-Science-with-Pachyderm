@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: contour
+description: A pipeline that identifies contours on an image.
+transform:
+  cmd:
+  - python3
+  - "/contour.py"
+  image: svekars/contour-histogram:1.0
+input:
+  pfs:
+    repo: photos
+    glob: "/"
+
