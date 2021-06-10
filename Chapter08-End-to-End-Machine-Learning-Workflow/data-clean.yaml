@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: data-clean
+description: A pipeline that tokenizes the text.
+input:
+  pfs:
+    glob: "/data.txt"
+    repo: data
+transform:
+  cmd:
+  - python3
+  - "/data-clean.py"
+  image: svekars/nlp-example:0.639
+

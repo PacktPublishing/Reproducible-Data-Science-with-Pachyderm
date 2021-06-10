@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: ner
+description: A NER pipeline
+input:
+  pfs:
+    glob: "/text.txt"
+    repo: data-clean
+transform:
+  cmd:
+  - python3
+  - "/ner.py"
+  image: svekars/nlp-example:0.639
+

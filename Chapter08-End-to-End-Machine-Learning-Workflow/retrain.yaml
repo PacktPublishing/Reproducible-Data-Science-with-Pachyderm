@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: retrain
+description: A pipeline that retrains the NER model.
+input:
+  pfs:
+    glob: "/training-data.json"
+    repo: data
+transform:
+  cmd:
+  - python3
+  - "/ner-improved.py"
+  image: svekars/nlp-example:0.639
+

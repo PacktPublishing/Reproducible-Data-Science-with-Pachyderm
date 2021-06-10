@@ -1,0 +1,4 @@
+[
+    ["Who is Ichabod Crane?", {"entities": [[7, 20, "PERSON"]]}],
+    ["Headless Horseman is a fictional character", {"entities": [[1, 17, "PERSON"]]}]
+]

@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: pos-tag
+description: A pipeline that performs POS tagging.
+input:
+  pfs:
+    glob: "/lemmatized.txt"
+    repo: data-clean
+transform:
+  cmd:
+  - python3
+  - "/pos-tag.py"
+  image: svekars/nlp-example:0.639
+

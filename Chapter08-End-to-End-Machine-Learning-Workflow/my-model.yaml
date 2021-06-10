@@ -1,0 +1,19 @@
+---
+pipeline:
+  name: my-model
+description: A retrained NER pipeline
+input:
+  cross:
+  - pfs:
+      repo: data-clean
+      glob: "/text.txt"
+  - pfs:
+      repo: retrain
+      glob: "/ner-improved-model.p"
+transform:
+  cmd:
+  - python3
+  - "/ner-my-model.py"
+  image: svekars/nlp-example:0.65
+
+
