@@ -1,0 +1,14 @@
+---
+ pipeline:
+   name: remove-outliers
+ description: A pipeline that removes outlines from the dataset.
+ input:
+   pfs:
+     glob: "/"
+     repo: data-clean
+ transform:
+   cmd:
+   - python3
+   - "/outliers.py"
+   image: svekars/hyperparameter-example:0.51
+

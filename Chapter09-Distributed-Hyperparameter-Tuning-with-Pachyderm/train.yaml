@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: train
+description: A pipeline that trains the model with a selected estimator.
+input:
+  pfs:
+    glob: "/"
+    repo: remove-outliers
+transform:
+  cmd:
+  - python3
+  - "/train.py"
+  image: svekars/hyperparameter-example:0.51
+

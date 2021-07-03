@@ -1,0 +1,14 @@
+---
+ pipeline:
+   name: data-explore
+ description: A pipeline that performs exploratory analysis.
+ input:
+   pfs:
+     glob: "/*"
+     repo: data
+ transform:
+   cmd:
+   - python3
+   - "/data-explore.py"
+   image: svekars/hyperparameter-example:0.5
+

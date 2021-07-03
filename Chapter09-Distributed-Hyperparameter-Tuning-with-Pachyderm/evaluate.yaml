@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: evaluate
+description: A pipeline that evaluates the performance of the model.
+input:
+  pfs:
+    glob: "/"
+    repo: remove-outliers
+transform:
+  cmd:
+  - python3
+  - "/grid-search.py"
+  image: svekars/hyperparameter-example:0.57
+
