@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: data-clean
+description: A pipeline that cleans the text
+input:
+  pfs:
+    glob: "/"
+    repo: data
+transform:
+  cmd:
+  - python3
+  - "/data-clean.py"
+  image: svekars/pachyderm-ide:1.0
+

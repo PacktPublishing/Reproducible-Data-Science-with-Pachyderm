@@ -1,0 +1,14 @@
+---
+pipeline:
+  name: sentiment-analysis
+description: A pipeline that performs sentiment analysis of data.
+input:
+  pfs:
+    glob: "/"
+    repo: data-clean
+transform:
+  cmd:
+  - python3
+  - "/sentiment.py"
+image: svekars/pachyderm-ide:1.0
+
