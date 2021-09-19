@@ -10,5 +10,5 @@ transform:
   cmd:
   - python3
   - "/pos-tag.py"
-  image: svekars/nlp-example:0.639
+  image: svekars/nlp-example:1.0
 

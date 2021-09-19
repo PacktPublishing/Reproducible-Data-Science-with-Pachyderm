@@ -10,5 +10,5 @@
    cmd:
    - python3
    - "/outliers.py"
-   image: svekars/hyperparameter-example:0.51
+   image: svekars/hyperparameter-example:1.0
 

@@ -10,5 +10,5 @@
    cmd:
    - python3
    - "/data-explore.py"
-   image: svekars/hyperparameter-example:0.5
+   image: svekars/hyperparameter-example:1.0
 
