@@ -1,0 +1,13 @@
+pipeline:
+  name: my-spout
+spout: {}
+transform:
+  cmd:
+  - python
+  - myspout.py
+  image: registry/image:1.0
+  env:
+    HOST: my-messaging-queue
+    TOPIC: mytopic
+    PORT: '5672'
+
