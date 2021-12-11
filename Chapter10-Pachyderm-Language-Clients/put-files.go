@@ -1,48 +1,53 @@
 package main
 
-import (
-	"fmt"
-    "log"
-    "os"
+ import (
+     "log"
+     "fmt"
+     "os"
 
-    "github.com/pachyderm/pachyderm/src/client"
+     "github.com/pachyderm/pachyderm/v2/src/client"
 )
 
 func main() {
 
-	c, err := client.NewFromAddress("127.0.0.1:30650")
-	if err != nil {
-		log.Fatal(err)
-	}
+     c, err := client.NewOnUserMachine("user")
+     if err != nil {
+         log.Fatal(err)
+     }
 
-    f, err := os.Open("red_vase.png")
-	if err != nil {
-		panic(err)
-	}
-    if _, err := c.PutFile("photos", "master", "red_vase.png", f); err != nil {
-		panic(err)
-	}
+     myCommit := client.NewCommit("photos","master", "")
 
-    f2, err := os.Open("landscape.png")
-    if err != nil {
-        panic(err)
-    }
-    if _, err := c.PutFile("photos", "master", "landscape.png", f2); err != nil {
-        panic(err)
-    }
+     f1, err := os.Open("landscape.png")
+     if err != nil {
+         panic(err)
+     }
 
-    f3, err := os.Open("hand.png")
-    if err != nil {
-        panic(err)
-    }
-    if _, err := c.PutFile("photos", "master", "hand.png", f3); err != nil {
-        panic(err)
-    }
+     if err := c.PutFile(myCommit, "landscape.png", f1); err != nil {
+         panic(err)
+     }
 
-    files, err := c.ListFile("photos", "master", "/")
-    if err != nil {
-        panic(err)
-    }
-    fmt.Println(files)
+     f2, err := os.Open("brown_vase.png")
+     if err != nil {
+         panic(err)
+     }
+
+     if err := c.PutFile(myCommit, "brown_vase.png", f2); err != nil {
+         panic(err)
+     }
+
+     f3, err := os.Open("hand.png")
+     if err != nil {
+         panic(err)
+     }
+
+     if err := c.PutFile(myCommit, "hand.png", f3); err != nil {
+         panic(err)
+     }
+
+     files, err := c.ListFileAll(myCommit, "/")
+     if err != nil {
+         panic(err)
+     }
+
+     fmt.Println(files)
 }
-

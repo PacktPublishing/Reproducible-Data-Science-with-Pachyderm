@@ -1,44 +1,45 @@
 package main
 
-import (
-	"fmt"
-    "log"
+ import (
+     "log"
+     "fmt"
 
-    "github.com/pachyderm/pachyderm/src/client"
+     "github.com/pachyderm/pachyderm/v2/src/client"
 )
 
 func main() {
 
-	c, err := client.NewFromAddress("127.0.0.1:30650")
-	if err != nil {
-		log.Fatal(err)
-	}
+     c, err := client.NewOnUserMachine("user")
+     if err != nil {
+         log.Fatal(err)
+     }
 
-    if err := c.DeleteRepo("contour", true); err != nil {
-		panic(err)
-    }
-    if err := c.DeleteRepo("photos", true); err != nil {
+     if err := c.DeleteRepo("contour", true); err != nil {
          panic(err)
-    }
-    if err := c.DeleteRepo("histogram", true); err != nil {
-          panic(err)
-    }
-    if err := c.DeletePipeline("contour", true); err != nil {
-          panic(err)
-    }
-    if err := c.DeletePipeline("histogram", true); err != nil {
-          panic(err)
-    }
+     }
+     if err := c.DeleteRepo("photos", true); err != nil {
+         panic(err)
+     }
+     if err := c.DeleteRepo("histogram", true); err != nil {
+         panic(err)
+     }
+     if err := c.DeletePipeline("contour", true); err != nil {
+         panic(err)
+     }
+     if err := c.DeletePipeline("histogram", true); err != nil {
+         panic(err)
+     }
 
-    pipelines, err := c.ListPipeline()
-    if err != nil {
-        panic(err)
-    }
-    fmt.Println(pipelines)
+     pipelines, err := c.ListPipeline(true)
+     if err != nil {
+         panic(err)
+     }
+     fmt.Println(pipelines)
 
-    repos, err := c.ListRepo()
-    if err != nil {
-        log.Fatal(err)
-    }
-    fmt.Println(repos)
+     repos, err := c.ListRepo()
+     if err != nil {
+         log.Fatal(err)
+     }
+     fmt.Println(repos)
 }
+
