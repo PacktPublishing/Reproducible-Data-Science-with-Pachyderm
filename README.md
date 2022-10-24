@@ -66,3 +66,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
   
 ## Get to Know the Author
 **Svetlana Karslioglu** is a seasoned documentation professional with over 10 years of experience in top Silicon Valley companies. During her tenure at Pachyderm, she authored much of the open source documentation for Pachyderm and was also in charge of the documentation infrastructure. Throughout her career, she has spoken at local conferences and given talks advocating for open infrastructure and unbiased research in artificial intelligence. When Svetlana is not busy writing books, she spends time with her three children and her husband, Murat.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801074483">https://packt.link/free-ebook/9781801074483 </a> </p>
